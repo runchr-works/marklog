@@ -47,6 +47,8 @@ Made by [Runchr](https://runchr.com)
 4. **"Insert into Blogger"** 버튼 클릭 → Blogger 본문에 HTML 삽입
    - 또는 **"Copy HTML"** 후 Blogger의 HTML 보기에 수동 붙여넣기
 
+<img width="1073" height="916" alt="image" src="https://github.com/user-attachments/assets/d54fec8d-127f-4535-86bb-af50e75f3569" />
+
 ### 이미지 첨부
 스크린샷이나 이미지를 복사한 뒤 에디터에 그냥 붙여넣기(Ctrl+V) 하면 됩니다. 본문에는 `![image](marklog-img://1)` 같은 짧은 토큰만 표시되고, 실제 데이터는 별도로 저장됩니다. 미리보기와 삽입 시점에 자동으로 실제 이미지로 치환됩니다.
 
