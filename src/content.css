@@ -1,0 +1,53 @@
+#marklog-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2147483646;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ff5722;
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+#marklog-fab:hover { background: #f4511e; }
+
+#marklog-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--marklog-panel-width, 50vw);
+  min-width: 320px;
+  max-width: 95vw;
+  height: 100vh;
+  z-index: 2147483647;
+  border: none;
+  border-left: 1px solid #ddd;
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+#marklog-panel.marklog-hidden,
+#marklog-resizer.marklog-hidden { display: none; }
+
+#marklog-resizer {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 6px;
+  right: var(--marklog-panel-width, 50vw);
+  margin-right: -3px;
+  z-index: 2147483647;
+  cursor: col-resize;
+  background: transparent;
+  transition: background 0.15s;
+}
+#marklog-resizer:hover,
+#marklog-resizer.dragging { background: rgba(255, 87, 34, 0.5); }
+body.marklog-resizing,
+body.marklog-resizing * { user-select: none !important; cursor: col-resize !important; }
+body.marklog-resizing #marklog-panel { pointer-events: none; }

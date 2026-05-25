@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Marklog</title>
+    <link rel="stylesheet" href="panel.css" />
+    <link rel="stylesheet" href="lib/highlight.min.css" />
+  </head>
+  <body>
+    <header class="toolbar">
+      <span class="brand">Marklog</span>
+      <div class="actions">
+        <button id="btn-insert" class="primary">Insert into Blogger</button>
+        <button id="btn-copy">Copy HTML</button>
+        <button id="btn-clear">Clear</button>
+        <button id="btn-theme" title="Toggle theme">🌙</button>
+        <button id="btn-close" title="Close">✕</button>
+      </div>
+    </header>
+    <div class="md-toolbar">
+      <button data-md="h" title="Heading">H</button>
+      <button data-md="b" title="Bold (Ctrl+B)"><b>B</b></button>
+      <button data-md="i" title="Italic (Ctrl+I)"><i>I</i></button>
+      <button data-md="s" title="Strikethrough"><s>S</s></button>
+      <span class="sep"></span>
+      <button data-md="link" title="Link (Ctrl+K)">🔗</button>
+      <button data-md="img" title="Image">🖼</button>
+      <button data-md="code" title="Inline code">&lt;/&gt;</button>
+      <button data-md="codeblock" title="Code block">{ }</button>
+      <span class="sep"></span>
+      <button data-md="ul" title="Bulleted list">• List</button>
+      <button data-md="ol" title="Numbered list">1. List</button>
+      <button data-md="quote" title="Quote">❝</button>
+      <button data-md="hr" title="Horizontal rule">―</button>
+      <button data-md="table" title="Table">▦</button>
+      <span class="sep"></span>
+      <button id="btn-help" title="Markdown cheatsheet">?</button>
+    </div>
+    <main class="split">
+      <textarea
+        id="editor"
+        spellcheck="false"
+        placeholder="# Write your markdown here&#10;&#10;Supports code, tables, and images."
+      ></textarea>
+      <div id="splitter" title="Drag to resize"></div>
+      <div id="preview" class="preview markdown-body"></div>
+    </main>
+    <div id="help-modal" class="modal hidden">
+      <div class="modal-body">
+        <header>
+          <strong>Markdown Cheatsheet</strong>
+          <button id="btn-help-close">✕</button>
+        </header>
+        <div class="cheatsheet">
+          <h4>Headings</h4>
+          <pre># H1
+## H2
+### H3
+#### H4</pre>
+
+          <h4>Emphasis</h4>
+          <div><code>**bold**</code> · <code>*italic*</code> · <code>***both***</code></div>
+          <div><code>~~strikethrough~~</code></div>
+          <div><code>\*literal asterisk\*</code> — escape with <code>\</code></div>
+
+          <h4>Links &amp; Images</h4>
+          <div><code>[text](https://url)</code></div>
+          <div><code>[text](https://url "title")</code></div>
+          <div><code>&lt;https://auto.link&gt;</code> · <code>&lt;a@b.com&gt;</code></div>
+          <div><code>![alt](https://img.png)</code></div>
+          <div><code>[![alt](img)](url)</code> — clickable image</div>
+          <div class="hint">Reference style:</div>
+          <pre>[text][ref]
+[ref]: https://url</pre>
+
+          <h4>Code</h4>
+          <div><code>`inline code`</code></div>
+          <pre>```js
+const x = 1;
+```</pre>
+          <div class="hint">Languages: js, ts, py, go, rust, bash, json, html, css, sql, …</div>
+
+          <h4>Lists</h4>
+          <pre>- item
+- item
+  - nested (2-space indent)
+    - deeper</pre>
+          <pre>1. first
+2. second
+   1. nested</pre>
+
+          <h4>Task Lists (GFM)</h4>
+          <pre>- [ ] todo
+- [x] done</pre>
+
+          <h4>Blockquote</h4>
+          <pre>&gt; quote
+&gt; &gt; nested quote</pre>
+
+          <h4>Horizontal Rule</h4>
+          <div><code>---</code> or <code>***</code></div>
+
+          <h4>Tables</h4>
+          <pre>| Left | Center | Right |
+| :--- | :----: | ----: |
+| a    | b      | c     |</pre>
+          <div class="hint">Colons in the divider row set column alignment.</div>
+
+          <h4>Footnotes</h4>
+          <pre>Text with footnote.[^1]
+
+[^1]: Footnote content.</pre>
+
+          <h4>Line Breaks</h4>
+          <div>End a line with two spaces, or just press Enter (breaks enabled).</div>
+
+          <h4>HTML</h4>
+          <div>Raw HTML is allowed: <code>&lt;kbd&gt;Ctrl&lt;/kbd&gt;</code>, <code>&lt;sub&gt;</code>, <code>&lt;sup&gt;</code>, <code>&lt;details&gt;</code>…</div>
+          <pre>&lt;details&gt;
+&lt;summary&gt;Click&lt;/summary&gt;
+hidden content
+&lt;/details&gt;</pre>
+
+          <div class="hint">Tip: paste images directly from clipboard — they're stored as short tokens.</div>
+          <div class="hint">Reference: <a href="https://github.github.com/gfm/" target="_blank" rel="noopener">GitHub Flavored Markdown spec</a></div>
+        </div>
+      </div>
+    </div>
+    <footer class="status">
+      <span id="status">Auto-saved</span>
+      <span class="credit">Made by <a href="https://runchr.com" target="_blank" rel="noopener">Runchr</a></span>
+    </footer>
+    <script src="lib/marked.min.js"></script>
+    <script src="lib/highlight.min.js"></script>
+    <script src="panel.js"></script>
+  </body>
+</html>

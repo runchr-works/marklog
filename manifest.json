@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Marklog - Markdown for Blogger",
+  "version": "0.1.0",
+  "description": "Write Blogger posts in Markdown with live preview.",
+  "author": "Runchr (https://runchr.com)",
+  "homepage_url": "https://runchr.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Marklog"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.blogger.com/blog/post/edit/*",
+        "https://draft.blogger.com/blog/post/edit/*",
+        "https://www.blogger.com/blog/posts/*"
+      ],
+      "js": ["src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/panel.html",
+        "src/panel.js",
+        "src/panel.css",
+        "src/lib/marked.min.js",
+        "src/lib/highlight.min.js",
+        "src/lib/highlight.min.css"
+      ],
+      "matches": ["https://*.blogger.com/*"]
+    }
+  ],
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://www.blogger.com/*",
+    "https://draft.blogger.com/*"
+  ]
+}
