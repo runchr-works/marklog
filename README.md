@@ -47,6 +47,9 @@ The extension is not on the Chrome Web Store yet, so you'll load it in developer
 4. Click **"Insert into Blogger"** to drop the rendered HTML into the post body
    - Alternatively, use **"Copy HTML"** and paste it into Blogger's HTML view
 
+<img width="1073" height="916" alt="image" src="https://github.com/user-attachments/assets/766f7408-b671-47e5-876a-329cc5a46cb9" />
+
+
 ### Pasting images
 Copy any image (screenshot, clipboard image, etc.) and paste it into the editor with Ctrl+V. Only a short token like `![image](marklog-img://1)` appears in the source; the actual image data is stored separately and substituted automatically in the preview and on insert.
 
