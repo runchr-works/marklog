@@ -29,7 +29,7 @@ Made by [Runchr](https://runchr.com)
 
 1. 이 저장소를 클론하거나 ZIP으로 내려받기
    ```
-   git clone https://github.com/your-username/marklog.git
+   git clone https://github.com/runchr-works/marklog.git
    ```
 2. 크롬 주소창에 `chrome://extensions` 입력 후 이동
 3. 우상단 **"개발자 모드"** 토글을 ON

@@ -7,6 +7,14 @@
   const btnClear = document.getElementById("btn-clear");
   const btnClose = document.getElementById("btn-close");
 
+  const MARKLOG_URL = "https://github.com/runchr-works/marklog";
+  const FOOTER_HTML =
+    `<p style="margin-top:2em;padding-top:1em;border-top:1px solid #eee;` +
+    `font-size:0.85em;color:#888;text-align:right;">` +
+    `✍ Written with <a href="${MARKLOG_URL}" target="_blank" rel="noopener" ` +
+    `style="color:#ff5722;text-decoration:none;">Marklog</a>` +
+    `</p>`;
+
   const STORAGE_KEY = "marklog.draft";
   const IMAGES_KEY = "marklog.images";
   const IMG_SCHEME = "marklog-img://";
@@ -168,7 +176,7 @@
   });
 
   btnInsert.addEventListener("click", () => {
-    const html = preview.innerHTML;
+    const html = preview.innerHTML + FOOTER_HTML;
     window.parent.postMessage({ type: "MARKLOG_INSERT_HTML", html }, "*");
     setStatus("Inserting…");
   });
@@ -187,7 +195,7 @@
   }
 
   btnCopy.addEventListener("click", () => {
-    const html = preview.innerHTML;
+    const html = preview.innerHTML + FOOTER_HTML;
     if (copyText(html)) setStatus("HTML copied to clipboard");
     else setStatus("Copy failed — try Ctrl+C in the preview");
   });

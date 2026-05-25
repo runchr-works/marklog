@@ -29,7 +29,7 @@ The extension is not on the Chrome Web Store yet, so you'll load it in developer
 
 1. Clone the repo (or download as ZIP):
    ```
-   git clone https://github.com/your-username/marklog.git
+   git clone https://github.com/runchr-works/marklog.git
    ```
 2. Open `chrome://extensions` in Chrome
 3. Toggle **Developer mode** ON (top right)
