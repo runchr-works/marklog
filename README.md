@@ -4,7 +4,6 @@
 
 A Chrome extension that lets you write Google Blogger posts in **Markdown**. Compose in a side panel with live preview, then insert the rendered HTML into the Blogger editor with one click.
 
-Made by [Runchr](https://runchr.com)
 
 ---
 
